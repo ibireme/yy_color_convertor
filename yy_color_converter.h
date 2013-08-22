@@ -85,7 +85,7 @@ typedef enum {
  * RGB <-> YPbPr
  * RGB <-> YIQ
  * CMYK <-> CMY
- * HSL <-> RGB
+ * HSL <-> HSB
  *
  * RGB <-> CIEXYZ
  *
