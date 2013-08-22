@@ -87,8 +87,8 @@ void RGB2HSB(CGFloat r, CGFloat g, CGFloat b,
     CLAMP_COLOR_VALUE(b);
     
     CGFloat max, min, delta;
-    max = fmaxf(r, fmaxf(g, b));
-    min = fminf(r, fminf(g, b));
+    max = fmax(r, fmax(g, b));
+    min = fmin(r, fmin(g, b));
     delta = max - min;
     
     *v = max;               // Brightness
@@ -118,7 +118,7 @@ void HSB2RGB(CGFloat h, CGFloat s, CGFloat v,
         CGFloat f, p, q, t;
         if (h == 1) h = 0;
         h *= 6;
-        sextant = floorf(h);
+        sextant = floor(h);
         f = h - sextant;
         p = v * (1 - s);
         q = v * (1 - s * f);
@@ -147,7 +147,7 @@ void RGB2CMYK(CGFloat r, CGFloat g, CGFloat b,
     *c = 1 - r;
     *m = 1 - g;
     *y = 1 - b;
-    *k = fminf(*c, fminf(*m, *y));
+    *k = fmin(*c, fmin(*m, *y));
     
     if (*k == 1) {
         *c = *m = *y = 0;   // Pure black
@@ -206,7 +206,7 @@ void CMY2CMYK(CGFloat c, CGFloat m, CGFloat y,
     CLAMP_COLOR_VALUE(m);
     CLAMP_COLOR_VALUE(y);
     
-    *kk = fminf(c, fminf(m, y));
+    *kk = fmin(c, fmin(m, y));
     if (*kk == 1) {
         *cc = *mm = *yy = 0;   // Pure black
     } else {

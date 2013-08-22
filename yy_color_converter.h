@@ -263,10 +263,10 @@ extern void CIELCHuv2CIELuv(CGFloat L, CGFloat C, CGFloat H,
 
 
 
-extern extern void CIEXYZ2LMS(CGFloat x, CGFloat y, CGFloat z,
+extern void CIEXYZ2LMS(CGFloat x, CGFloat y, CGFloat z,
              CGFloat *L, CGFloat *M, CGFloat *S);
 
-extern extern void LMSToCIEXYZ(CGFloat L, CGFloat M, CGFloat S,
+extern void LMSToCIEXYZ(CGFloat L, CGFloat M, CGFloat S,
               CGFloat *X, CGFloat *Y, CGFloat *Z);
 
 
